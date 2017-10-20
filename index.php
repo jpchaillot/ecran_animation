@@ -1,27 +1,85 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <title>admin jpc</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css">
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/font-awesome/4.7.0/css/font-awesome.min.css">
+    <script src="https://code.jquery.com/jquery-3.1.1.min.js"></script>
+    <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script>
+</head>
+<body>
+<div class="container text-center" style="padding-top: 10em;">
+    <div class="panel panel-default">
+        <div class="panel-header">
+            <h1>Administration Video</h1>
+        </div>
+        <div class="panel-body">
+            <form class="horizontal-form" action="envoi.php" method="post">
+                <div class="form-group">
+                    <strong>Enter video URL Copier l'URL d'une video Youtube</strong>
+                </div>
+                <div class="form-group">
+                    <input title="Video ID" name="video_url" type="text" class="form-control">
+                </div>
+                <div class="form-group">
+                    <span>Puis appuyer sur  <code>Enter</code> Pour valider</span>
+                </div>
+            </form>
+            <p>
+
+            </p>
+        </div>
+    </div>
+</div>
+
+<div id="dossier-video" align="center">
+	<table >
+	<?php 
+    $nb_fichier = 0;
+    if($dossier = opendir('./video')){
+    while(false !== ($fichier = readdir($dossier))){
+        if($fichier != '.' && $fichier != '..' && $fichier != 'index.php'){
+            $nb_fichier++; // On incrémente le compteur de 1
+     ?>
+     	<tr>
+     		<td>
+     			<a href="./video/<?= $fichier ?>"> <?= $fichier ?> </a>
+     		</td>
+     		<td>
+     			<a type="button" class="btn btn-danger" href="suppression.php?fichier=<?= $fichier ?>">Supprimer</a>
+     		</td>
+     	</tr>
+ 	<?php }
+        }}
+        ?>
+ 
+	</table>
+
+
 <?php 
-require_once 'Autoloader.php';
-Autoloader::register();
+echo '</ul><br />';
+echo 'Il y a <strong>' . $nb_fichier .'</strong> fichier(s) dans le dossier';
 
-echo '<link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css" integrity="sha384-BVYiiSIFeK1dGmJRAkycuHAHRg32OmUcww7on3RYdg4Va+PmSTsz/K68vbdEjh4u" crossorigin="anonymous">';
-
-$form = new HTML\BootstrapForm();
+closedir($dossier);
 
 ?>
 
-<div class="starter-template" style="padding-top: 100px;">
-	<form method="post">
-		<?= $form->input('nom','adresse de la video youtube');?>
-		<?= $form->submit();?>
-	</form>
 
 </div>
 
-<?php 
-var_dump($_POST);
 
-if (isset($_POST["nom"])){
-    echo 'salut';
-    var_dump ( 'youtube-dl '.$_POST['nom']);
-    echo exec ( 'youtube-dl '.$_POST['nom'] );
-}
-?>
+
+
+
+
+
+
+
+</body>
+</html>
+
+
+
+
+

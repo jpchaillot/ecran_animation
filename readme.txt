@@ -9,6 +9,8 @@ git clone https://github.com/adafruit/pi_video_looper.git
 cd pi_video_looper
 sudo ./install.sh
 
+configuration du /boot/video_looper.ini file ici present
+
 
 sudo apt-get install youtubedl
 
@@ -18,6 +20,11 @@ sudo chmod -R 770 /var/www/html/
 sudo aptitude install php7.0
 sudo aptitude install mysql-server php7.0-mysql
 sudo aptitude install phpmyadmin
+
+
+ensuite installation de composer et avec installation de youtube-dl-php de norkumas
+curl -sS https://getcomposer.org/installer | php
+php composer.phar require norkunas/youtube-dl-php
 
 
 le fichier de configuration :  
