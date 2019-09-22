@@ -1,6 +1,6 @@
 <?php
 
-set_time-limit(0);
+set_time_limit(0);
 
 if(!isset($_POST['video_url'])){
     header('Location: index.php');
