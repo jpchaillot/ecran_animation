@@ -25,4 +25,7 @@ wget -P /var/www/html https://raw.githubusercontent.com/jpchaillot/ecran_animati
 wget -P /var/www/html https://raw.githubusercontent.com/jpchaillot/ecran_animation/master/suppression.php
 
 sudo git clone https://github.com/adafruit/pi_video_looper.git /home/pi/pi_video_looper/
-sudo ./home/pi/pi_video_looper/install.shrm 
+sudo sh ./home/pi/pi_video_looper/install.sh
+
+sudo rm /boot/video_looper.ini
+sudo wget -P /boot/ https://raw.githubusercontent.com/jpchaillot/ecran_animation/master/video_looper.ini
