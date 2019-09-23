@@ -11,18 +11,20 @@ sudo apt-get install youtube-dl -y
 sudo youtube-dl -U
 
 sudo aptitude install apache2 -y
+sudo aptitude install php -y
+
+sudo rm -R * /var/www/html
 
 sudo chown -R pi:www-data /var/www/html/
 sudo chmod -R 770 /var/www/html/
 sudo mkdir /var/www/html/video
+sudo chown -R pi:www-data /var/www/html/video
 sudo chmod -R 770 /var/www/html/video
 
 
-sudo aptitude install php -y
-
-wget -P /var/www/html https://raw.githubusercontent.com/jpchaillot/ecran_animation/master/envoi.php
-wget -P /var/www/html https://raw.githubusercontent.com/jpchaillot/ecran_animation/master/index.php
-wget -P /var/www/html https://raw.githubusercontent.com/jpchaillot/ecran_animation/master/suppression.php
+sudo wget -P /var/www/html https://raw.githubusercontent.com/jpchaillot/ecran_animation/master/envoi.php
+sudo wget -P /var/www/html https://raw.githubusercontent.com/jpchaillot/ecran_animation/master/index.php
+sudo wget -P /var/www/html https://raw.githubusercontent.com/jpchaillot/ecran_animation/master/suppression.php
 
 sudo git clone https://github.com/adafruit/pi_video_looper.git /home/pi/pi_video_looper/
 sudo chmod +x /home/pi/pi_video_looper/install.sh
