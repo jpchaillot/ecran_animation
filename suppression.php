@@ -9,5 +9,6 @@ if(!isset($_GET['fichier'])){
 }
 
 exec('rm ./video/'.$_GET['fichier']);
+exec('rm ./video/\''.$_GET['fichier'].'\'');
 
 header('Location: index.php');
