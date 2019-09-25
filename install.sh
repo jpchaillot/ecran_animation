@@ -17,9 +17,10 @@ sudo rm -R * /var/www/html
 
 sudo chown -R pi:www-data /var/www/html/
 sudo chmod -R 770 /var/www/html/
-sudo mkdir /var/www/html/video
-sudo chown -R pi:www-data /var/www/html/video
-sudo chmod -R 770 /var/www/html/video
+
+sudo mkdir /boot/video
+sudo chown -R pi:www-data /boot/video
+sudo chmod -R 777 /boot/video
 
 
 sudo wget -P /var/www/html https://raw.githubusercontent.com/jpchaillot/ecran_animation/master/envoi.php
