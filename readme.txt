@@ -2,7 +2,13 @@ notice de l ecran
 
 1 installer rasbian lite
 
-2 executer ces commandes sur le raspberry
+2 wget https://raw.githubusercontent.com/jpchaillot/ecran_animation/master/install.sh
+3 chmod +x install.sh
+4 sh ./install.sh
+
+
+ancienne methode 
+executer ces commandes sur le raspberry
 sudo apt-get update
 sudo apt-get install -y git
 git clone https://github.com/adafruit/pi_video_looper.git
