@@ -31,5 +31,5 @@ sudo git clone https://github.com/adafruit/pi_video_looper.git /home/pi/pi_video
 sudo chmod +x /home/pi/pi_video_looper/install.sh
 sudo /home/pi/pi_video_looper/install.sh
 
-sudo rm /boot/video_looper.ini
-sudo wget -P /boot/ https://raw.githubusercontent.com/jpchaillot/ecran_animation/master/video_looper.ini
+#sudo rm /boot/video_looper.ini
+#sudo wget -P /boot/ https://raw.githubusercontent.com/jpchaillot/ecran_animation/master/video_looper.ini
