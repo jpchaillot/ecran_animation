@@ -33,6 +33,27 @@
     </div>
 </div>
 
+<div>
+    <form method="POST" enctype="multipart/form-data">
+        <input type ="file" name="upload_file"/> <br> <br/>
+        <input type ="submit" name="submit"/>
+    </form>
+    
+    <?php   
+
+    $chemin_destination = $chemin_site . './video/';
+
+    if ((isset($_FILES['upload_file']['tmp_name'])&&($_FILES['upload_file']['error'] == UPLOAD_ERR_OK))) {  
+        
+        $temp = move_uploaded_file($_FILES['upload_file']['tmp_name'], $chemin_destination.$_FILES['upload_file']['name']);
+        }     
+    ?>
+</div>
+
+
+
+
+
 <div id="dossier-video" align="center">
 	<table >
 	<?php 
@@ -40,7 +61,7 @@
     if($dossier = opendir('./video')){
     while(false !== ($fichier = readdir($dossier))){
         if($fichier != '.' && $fichier != '..' && $fichier != 'index.php'){
-            $nb_fichier++; // On incrémente le compteur de 1
+            $nb_fichier++; // On incrï¿½mente le compteur de 1
      ?>
      	<tr>
      		<td>

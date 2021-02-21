@@ -31,5 +31,9 @@ sudo git clone https://github.com/adafruit/pi_video_looper.git /home/pi/pi_video
 sudo chmod +x /home/pi/pi_video_looper/install.sh
 sudo /home/pi/pi_video_looper/install.sh
 
+sudo sed -i '/file_reader = usb_drive/c\# file_reader = usb_drive' /boot/video_looper.ini
+sudo sed -i '/# file_reader = directory/c\file_reader = directory' /boot/video_looper.ini
+sudo sed -i '/path = \/home\/pi\/video/c\path = \/var\/www\/html\/video' /boot/video_looper.ini
+
 #sudo rm /boot/video_looper.ini
 #sudo wget -P /boot/ https://raw.githubusercontent.com/jpchaillot/ecran_animation/master/video_looper.ini
