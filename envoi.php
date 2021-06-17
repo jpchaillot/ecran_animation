@@ -6,7 +6,7 @@ if(!isset($_POST['video_url'])){
     header('Location: index.php');
 }
 
-shell_exec("youtube-dl -f best -o '/boot/video/%(title)s-%(id)s.%(ext)s' ".$_POST['video_url']);
+shell_exec("youtube-dl -f best -o '/var/www/html/video/%(title)s-%(id)s.%(ext)s' ".$_POST['video_url']);
 
 
 //var_dump($_POST);

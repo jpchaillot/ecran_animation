@@ -18,9 +18,9 @@ sudo rm -R * /var/www/html
 sudo chown -R pi:www-data /var/www/html/
 sudo chmod -R 777 /var/www/html/
 
-sudo mkdir /boot/video/
-sudo chown -R pi:www-data /boot/video/
-sudo chmod -R 777 /boot/video/
+sudo mkdir /var/www/html/video
+sudo chown -R pi:www-data /var/www/html/video
+sudo chmod -R 777 /var/www/html/video
 
 
 sudo wget -P /var/www/html https://raw.githubusercontent.com/jpchaillot/ecran_animation/master/envoi.php
@@ -39,11 +39,11 @@ sudo sed -ri 's/Timeout [0-9]+/Timeout 50000/g' /etc/apache2/apache2.conf
 sudo find . -name "php.ini" -exec sudo sed -ri 's/post_max_size *= *[0-9]+[MK]?/post_max_size = 1900M/g' {} +
 sudo find . -name "php.ini" -exec sudo sed -ri 's/upload_max_filesize *= *[0-9]+[MK]?/upload_max_filesize = 1900M/g' {} +
 sudo find . -name "php.ini" -exec sudo sed -ri 's/default_socket_timeout *= *[0-9]+/default_socket_timeout = 6000/g' {} +
-sudo service apache2 restart
+
 
 sudo sed -i '/file_reader = usb_drive/c\# file_reader = usb_drive' /boot/video_looper.ini
 sudo sed -i '/# file_reader = directory/c\file_reader = directory' /boot/video_looper.ini
-sudo sed -i '/path = \/home\/pi\/video/c\path = \/boot/video' /boot/video_looper.ini
+sudo sed -i '/path = \/home\/pi\/video/c\path = \/var\/www\/html\/video' /boot/video_looper.ini
 
 #sudo rm /boot/video_looper.ini
 #sudo wget -P /boot/ https://raw.githubusercontent.com/jpchaillot/ecran_animation/master/video_looper.ini
