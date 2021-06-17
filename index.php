@@ -41,7 +41,7 @@
     
     <?php   
 
-    $chemin_destination = $chemin_site . './video/';
+    $chemin_destination = $chemin_site . '/boot/video/';
 
     if ((isset($_FILES['upload_file']['tmp_name'])&&($_FILES['upload_file']['error'] == UPLOAD_ERR_OK))) {  
         
@@ -58,7 +58,7 @@
 	<table >
 	<?php 
     $nb_fichier = 0;
-    if($dossier = opendir('./video')){
+    if($dossier = opendir('/boot/video/')){
     while(false !== ($fichier = readdir($dossier))){
         if($fichier != '.' && $fichier != '..' && $fichier != 'index.php'){
             $nb_fichier++; // On incr�mente le compteur de 1
