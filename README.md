@@ -5,9 +5,9 @@ notice de l ecran
 copier les fichier ssh et wpa_supplicant.conf sur la partition boot de la carte sd en y modifiant les valeurs pour le mot de passe wifi
 
 
-2 wget https://raw.githubusercontent.com/jpchaillot/ecran_animation/master/install.sh
-3 chmod +x install.sh
-4 sh ./install.sh
+wget https://raw.githubusercontent.com/jpchaillot/ecran_animation/master/install.sh
+sudo chmod +x install.sh
+sudo sh ./install.sh
 
 
 ancienne methode 
