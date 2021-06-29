@@ -46,7 +46,7 @@ sudo find /etc/ -name "php.ini" -exec sudo sed -ri 's/default_socket_timeout *= 
 
 
 sudo sed -i '/file_reader = usb_drive/c\# file_reader = usb_drive' /boot/video_looper.ini
-sudo sed -i '/# file_reader = directory/c\file_reader = directory' /boot/video_looper.ini
+sudo sed -i '/# *file_reader = directory/c\file_reader = directory' /boot/video_looper.ini
 sudo sed -i '/path = \/home\/pi\/video/c\path = \/var\/www\/html\/video' /boot/video_looper.ini
 
 #sudo rm /boot/video_looper.ini
