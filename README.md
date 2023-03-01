@@ -4,6 +4,8 @@ notice de l ecran
 
 copier les fichier ssh et wpa_supplicant.conf sur la partition boot de la carte sd en y modifiant les valeurs pour le mot de passe wifi
 
+sudo apt-get update  && sudo apt-get upgrade && sudo apt-get update  && sudo apt-get upgrade 
+
 2 Execut'er cette commande
 
 wget https://raw.githubusercontent.com/jpchaillot/ecran_animation/master/install.sh  && sudo chmod +x install.sh && sudo sh ./install.sh
